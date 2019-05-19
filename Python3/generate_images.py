@@ -11,7 +11,7 @@ import random
 import json
 import os
 
-def main():
+def gen_img():
 	parser = argparse.ArgumentParser()
 
 	parser.add_argument('--z_dim', type=int, default=100,
@@ -101,6 +101,3 @@ def main():
 		combined_image = np.concatenate( caption_images[0:-1], axis = 1 )
 		scipy.misc.imsave( join(args.data_dir, 'val_samples/combined_image_{}.jpg'.format(cn)) , combined_image)
 
-
-if __name__ == '__main__':
-	main()
